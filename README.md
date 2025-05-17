@@ -48,7 +48,7 @@ Options:
 
 ## To Do List
 
-- [ ] Add help/version
+- [x] Add help/version
 - [ ] Add configuration functionality.
 - [ ] Add build functionality.
 - [ ] Add test functionality.
@@ -61,6 +61,8 @@ For each main function, documentation will be added.
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, please open an issue or submit a pull request.
+
+- Michael Lee Schaecher \<MichaelLeeSchaecher@gmail.com\>
 
 ## License
 

@@ -1,0 +1,46 @@
+#!/bin/env bash
+
+#  DPKG-CRAFT: A tool for building none compliant i.e scripted/binary deb packages.
+#  Copyright (C) 2025 Michael Lee Schaecher <michaelleeschaecher@gmail.com>
+#
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+_Name="dpkg-craft"
+_Version="$(cat /usr/share/doc/${_Name}/version || echo unknown)"
+
+_Author="Michael Lee Schaecher <MichaelLeeSchaecher@gmail.com>"
+_License="GPLv3"
+
+_versionInfo="$(cat <<EOF
+${_Name} - [VERSION] ${_Version} - $(date +%Y-%m-%d)
+Copyright (c) 2025 ${_License} by ${_Author}
+EOF
+)"
+
+_helpInfo="$(cat <<EOF
+${_versionInfo}
+
+Usage: ${_Name} [command] option [args] ...
+
+Commands:
+  help            Show this help message
+  version         Show version information
+EOF
+)"
+
+# Base command for dpkg-craft
+case "${1}" in
+    help            ) echo "${_helpInfo}"    ;;
+    version         ) echo "${_versionInfo}" ;;
+esac
